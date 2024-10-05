@@ -1,8 +1,8 @@
 import streamlit as st
 import numpy as np
-import pickle
-with open('house_price_model.pkl', 'wb') as file:
-    pickle.dump(model, file)
+import joblib
+
+model = joblib.load('house_price_model.pkl')
 
 
 st.title("House Price Prediction App")
