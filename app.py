@@ -1,6 +1,10 @@
 import streamlit as st
 import numpy as np
-import joblib
+try:
+    import joblib
+except ImportError:
+    st.error("Error: joblib is not installed. Please install it and try again.")
+    st.stop()  # Stop execution if joblib is not found
 
 model = joblib.load('house_price_model.pkl')
 
